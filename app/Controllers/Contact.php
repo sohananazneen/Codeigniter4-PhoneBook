@@ -6,6 +6,12 @@ class Contact extends BaseController{
     public function index(){
         $session = \Config\Services::session();
         $data['session']=$session;
+
+        # Fetching All Data
+        $model = new ContactModel();
+        $contacts = $model->getRecords();
+        $data['contacts']=$contacts;
+
         return view('phonebook/index', $data);
     }
     public function add(){

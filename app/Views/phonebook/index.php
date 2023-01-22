@@ -54,12 +54,21 @@
         </tr>
       </thead>
       <tbody>
+        <?php
+          if(!empty($contacts)){
+            foreach($contacts as $contact){              
+        ?>
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
+          <th scope="row"><?=$contact['id'];?></th>
+          <td><?=$contact['name'];?></td>
+          <td><?=$contact['mobile'];?></td>
           <td><button type="button" class="btn btn-primary m-1">Update</button><button type="button" class="btn btn-danger">Delete</button></td>
         </tr>
+        <?php }} else {?>
+          <tr>
+            <td colspan="4">No records found........</td>
+          </tr>
+          <?php }?>
       </tbody>
     </table>
   </div>
