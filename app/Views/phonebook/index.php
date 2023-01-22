@@ -11,17 +11,17 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Ci4 PhoneBook</a>
+    <a class="navbar-brand" href="<?=base_url('/'); ?>">Ci4 PhoneBook</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Contact</a>
+          <a class="nav-link active" aria-current="page" href="<?=base_url('/'); ?>">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Add Contact</a>
+          <a class="nav-link" href="<?=base_url('add/'); ?>">Add Contact</a>
         </li>
       </ul>      
     </div>
@@ -36,7 +36,7 @@
           echo '<div class="alert alert-success mt-5" role="alert">'.$session->getFlashdata('success').'</div>';
         }
 
-        // for error in update id  
+        // for wrong update id  
         if(!empty($session->getFlashdata('error'))){
           echo '<div class="alert alert-danger mt-5" role="alert">'.$session->getFlashdata('error').'</div>';
         }
@@ -44,7 +44,7 @@
       
     </div>
     <div class="col-md-3 mt-5">
-      <a href="#" class="btn btn-success btn-pos">Add New Contact</a>
+      <a href="<?=base_url('add/'); ?>" class="btn btn-success">Add New Contact</a>
     </div>
   </div>
 
@@ -68,7 +68,8 @@
           <td><?=$contact['name'];?></td>
           <td><?=$contact['mobile'];?></td>
           <td><a href="<?=base_url('update/'.$contact['id']); ?>" class="btn btn-primary m-1">Update</a>
-          <button type="button" class="btn btn-danger">Delete</button></td>
+          <a href="#" onclick="confirmDelete(<?=$contact['id']?>)" class="btn btn-danger">Delete</a>
+          </td>
         </tr>
         <?php }} else {?>
           <tr>
@@ -79,5 +80,14 @@
     </table>
   </div>
 </div>
+
+
+<script>
+  const confirmDelete=(id)=>{
+    if(confirm('are you want to delete?')){
+      window.location.href='<?=base_url('delete');?>/'+id;
+    }
+  }
+</script>
 </body>
 </html>

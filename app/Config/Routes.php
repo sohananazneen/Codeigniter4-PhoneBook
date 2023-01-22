@@ -35,6 +35,7 @@ $routes->get('/add', 'Contact::add');
 $routes->post('/add', 'Contact::add');
 $routes->get('/update/(:num)', 'Contact::update/$1');
 $routes->post('/update/(:num)', 'Contact::update/$1');
+$routes->get('/delete/(:num)', 'Contact::delete/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

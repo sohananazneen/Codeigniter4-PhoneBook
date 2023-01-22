@@ -10,17 +10,17 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Ci4 PhoneBook</a>
+    <a class="navbar-brand" href="<?=base_url('/'); ?>">Ci4 PhoneBook</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Contact</a>
+          <a class="nav-link active" aria-current="page" href="<?=base_url('/'); ?>">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Add Contact</a>
+          <a class="nav-link" href="<?=base_url('add/'); ?>">Add Contact</a>
         </li>
       </ul>      
     </div>
@@ -53,7 +53,7 @@
     ?>
   </div>  
   <div class="col-12">
-    <button type="submit" class="btn btn-primary">Update Contact</button>
+    <button type="submit" class="btn btn-primary">Update</button>
   </div>
 </form>
 </div>

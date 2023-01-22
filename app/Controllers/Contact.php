@@ -56,7 +56,7 @@ class Contact extends BaseController{
         $model =new ContactModel();
         $contact = $model->getRow($id);
         
-        // for error in update id  
+         // for wrong update id  
         if(!empty($contact)){
             $data['contact']= $contact;
         }else{
@@ -87,6 +87,25 @@ class Contact extends BaseController{
         }
 
         return view('phonebook/update',$data);
+    }
+
+    # Delete
+    public function delete($id){
+        $session = \Config\Services::session();
+      
+        // show data in update page
+        $model =new ContactModel();
+        $contact = $model->getRow($id);
+
+         // for wrong update id  
+         if(empty($contact)){           
+            $session->setFlashdata('error','Contact not found');
+            return redirect()->to('/');
+        }
+
+        $model->delete($id);
+        $session->setFlashdata('success','Contact has been deleted');
+        return redirect()->to('/');
     }
 }
 
