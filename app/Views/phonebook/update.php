@@ -28,32 +28,34 @@
 </nav>
 
 <div class="container p-4">
-    <h6 class="text-center">Add Contact</h6>
-  <form method="post" >
-    <div class="mb-3">
-      <label for="inputAddress" class="form-label">Name</label>
-      <input type="text" class="form-control <?=(isset($validation)&& $validation->hasError('name'))?'is-invalid':''?>" id="name" name="name" value="<?=set_value('name')?>" placeholder="name">
-      
-      <?php
-          if(isset($validation)&& $validation->hasError('name')){
-              echo $validation->getError('name');
-          }
-      ?>
-    </div>
-    <div class="mb-3">
-      <label for="inputAddress2" class="form-label">Mobile</label>
-      <input type="text" class="form-control <?=(isset($validation)&& $validation->hasError('name'))?'is-invalid':''?>" id="mobile" name="mobile" value="<?=set_value('mobile')?>" placeholder="Mobile">
 
-      <?php
-          if(isset($validation)&& $validation->hasError('mobile')){
-              echo $validation->getError('mobile');
-          }
-      ?>
-    </div>  
-    <div class="mb-3">
-      <button type="submit" class="btn btn-primary">Add Contact</button>
-    </div>
-  </form>
+    <h6 class="text-center">Update Contact</h6>
+
+    <form method="post" >
+  <div class="mb-3">
+    <label class="form-label">Name</label>
+    <input type="text" class="form-control <?=(isset($validation)&& $validation->hasError('name'))?'is-invalid':''?>" id="name" name="name" value="<?=set_value('name', $contact['name'])?>" placeholder="Contact name">
+    
+    <?php
+        if(isset($validation)&& $validation->hasError('name')){
+            echo $validation->getError('name');
+        }
+    ?>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Mobile</label>
+    <input type="text" class="form-control <?=(isset($validation)&& $validation->hasError('name'))?'is-invalid':''?>" id="mobile" name="mobile" value="<?=set_value('mobile',$contact['mobile'])?>" placeholder="Mobile">
+
+    <?php
+        if(isset($validation)&& $validation->hasError('mobile')){
+            echo $validation->getError('mobile');
+        }
+    ?>
+  </div>  
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Update Contact</button>
+  </div>
+</form>
 </div>
 </body>
 </html>

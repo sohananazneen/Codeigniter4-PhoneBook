@@ -10,6 +10,11 @@ class ContactModel extends Model{
     public function getRecords(){
         return $this->orderBy('id','DESC')->findAll();
     }
+
+      // show data in update page
+    public function getRow($id){
+        return $this->where('id', $id)->first();
+    }
 }
 
 ?>

@@ -62,7 +62,8 @@
           <th scope="row"><?=$contact['id'];?></th>
           <td><?=$contact['name'];?></td>
           <td><?=$contact['mobile'];?></td>
-          <td><button type="button" class="btn btn-primary m-1">Update</button><button type="button" class="btn btn-danger">Delete</button></td>
+          <td><a href="<?=base_url('update/'.$contact['id']); ?>" class="btn btn-primary m-1">Update</a>
+          <button type="button" class="btn btn-danger">Delete</button></td>
         </tr>
         <?php }} else {?>
           <tr>

@@ -33,6 +33,8 @@ $routes->set404Override();
 $routes->get('/', 'Contact::index');
 $routes->get('/add', 'Contact::add');
 $routes->post('/add', 'Contact::add');
+$routes->get('/update/(:num)', 'Contact::update/$1');
+$routes->post('/update/(:num)', 'Contact::update/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
