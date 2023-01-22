@@ -4,7 +4,9 @@ use App\Models\ContactModel;
 
 class Contact extends BaseController{
     public function index(){
-        return view('phonebook/index');
+        $session = \Config\Services::session();
+        $data['session']=$session;
+        return view('phonebook/index', $data);
     }
     public function add(){
         $session = \Config\Services::session();
@@ -25,6 +27,8 @@ class Contact extends BaseController{
                     'name'=>$this->request->getPost('name'),
                     'mobile'=>$this->request->getPost('mobile'),
                 ]);
+                    $session->setFlashdata('success','Contact has been added.');
+                    return redirect()->to('/');
             }else{
                 // form not validated
                 $data['validation']=$this->validator;

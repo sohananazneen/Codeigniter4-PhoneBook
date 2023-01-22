@@ -29,25 +29,40 @@
 </nav>
 
 <div class="container p-4">
-<button type="button" class="btn btn-success">Add New Contact</button>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Mobile</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td><button type="button" class="btn btn-primary m-1">Update</button><button type="button" class="btn btn-danger">Delete</button></td>
-    </tr>
-  </tbody>
-</table>
+  <div class="row">
+    <div class="col-md-4 mt-5">
+      <?php
+        if(!empty($session->getFlashdata('success'))){
+          echo '<div class="alert alert-success mt-5" role="alert">'.$session->getFlashdata('success').'</div>';
+        }
+      ?>
+      
+    </div>
+    <div class="col-md-3 mt-5">
+      <a href="#" class="btn btn-success btn-pos">Add New Contact</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td><button type="button" class="btn btn-primary m-1">Update</button><button type="button" class="btn btn-danger">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 </body>
 </html>
