@@ -20,7 +20,7 @@
           <a class="nav-link active" aria-current="page" href="<?=base_url('/'); ?>">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?=base_url('add/'); ?>">Add Contact</a>
+          <a class="nav-link" href="<?=base_url('add'); ?>">Add Contact</a>
         </li>
       </ul>      
     </div>

@@ -21,7 +21,7 @@
           <a class="nav-link active" aria-current="page" href="<?=base_url('/'); ?>">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?=base_url('add/'); ?>">Add Contact</a>
+          <a class="nav-link" href="<?=base_url('add'); ?>">Add Contact</a>
         </li>
       </ul>      
     </div>
@@ -44,7 +44,7 @@
       
     </div>
     <div class="col-md-3 mt-5">
-      <a href="<?=base_url('add/'); ?>" class="btn btn-success">Add New Contact</a>
+      <a href="<?=base_url('add'); ?>" class="btn btn-success">Add New Contact</a>
     </div>
   </div>
 
