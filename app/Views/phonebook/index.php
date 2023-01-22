@@ -35,6 +35,11 @@
         if(!empty($session->getFlashdata('success'))){
           echo '<div class="alert alert-success mt-5" role="alert">'.$session->getFlashdata('success').'</div>';
         }
+
+        // for error in update id  
+        if(!empty($session->getFlashdata('error'))){
+          echo '<div class="alert alert-danger mt-5" role="alert">'.$session->getFlashdata('error').'</div>';
+        }
       ?>
       
     </div>

@@ -55,7 +55,14 @@ class Contact extends BaseController{
         // show data in update page
         $model =new ContactModel();
         $contact = $model->getRow($id);
-        $data['contact']= $contact;
+        
+        // for error in update id  
+        if(!empty($contact)){
+            $data['contact']= $contact;
+        }else{
+            $session->setFlashdata('error','Contact not found');
+            return redirect()->to('/');
+        }
 
         if($this->request->getMethod()=='post'){
             // form validation 
